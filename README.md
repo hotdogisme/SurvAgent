@@ -60,11 +60,14 @@ At inference time, SurvAgent:
 If you find this work useful, please consider citing our paper. The final BibTeX entry will be updated after the camera-ready publication information is finalized.
 
 ```bibtex
-@article{huang2025survagent,
-  title   = {SurvAgent: Hierarchical CoT-Enhanced Case Banking and Dichotomy-Based Multi-Agent System for Multimodal Survival Prediction},
-  author  = {Huang, Guolin and Chen, Wenting and Yang, Jiaqi and Lyu, Xinheng and Luo, Xiaoling and Yang, Sen and Xing, Xiaohan and Shen, Linlin},
-  journal = {arXiv preprint},
-  year    = {2025}
+@misc{huang2025survagenthierarchicalcotenhancedcase,
+      title={SurvAgent: Hierarchical CoT-Enhanced Case Banking and Dichotomy-Based Multi-Agent System for Multimodal Survival Prediction}, 
+      author={Guolin Huang and Wenting Chen and Jiaqi Yang and Xinheng Lyu and Xiaoling Luo and Sen Yang and Xiaohan Xing and Linlin Shen},
+      year={2025},
+      eprint={2511.16635},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2511.16635}, 
 }
 ```
 
