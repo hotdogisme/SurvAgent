@@ -1,0 +1,12 @@
+## Task
+- The input content provides the current pathological/clinical report at the genetic level for a bladder cancer patient. You need to perform a final integrated summary.
+- This report contains pathological and clinical analyses related to 6 important genomic information points.
+- Your output should constitute a concise, comprehensive overview describing the patient's current clinical situation based on all the genetic information. Focus should be on summarizing the clinical manifestations; there is no need to analyze specific genes or numerical values.
+- Only summarize and integrate abnormalities, refrain from offering any recommendations.
+- Your output must be as concise as possible! Simultaneously, the analysis should be comprehensive, including all abnormal findings.
+
+## Genetic Report
+{report}
+
+## Output Example
+The patient's gene cohort demonstrates...

@@ -1,0 +1,20 @@
+## Task
+- You need to infer the risk level of the current bladder cancer patient based on the provided structured report. The patient's true risk level has already been provided. Please combine structured report to explain why the patient belongs to this risk level.
+- Your reasoning should align with medical professionalism and be consistent with medical and clinical facts.
+- Please provide a concise and accurate analysis based on the clinical diagnostic report! Format your output as shown in the "Output Example."
+
+## Risk Level Description
+High: Prognostic survival time of 0-12 months
+High-intermediate: Prognostic survival time of 12-24 months
+Low-intermediate: Prognostic survival time of 24-36 months
+Low: Prognostic survival time of over 36 months
+
+## Structured Report of the Current Patient
+{wsi_report}
+
+Correct Risk Level: {risk_level}
+
+## Output Example
+Risk Level: [High / High-intermediate / Low-intermediate / Low]
+Key Evidence: List the key features in the report that most support this judgment.
+Uncertainty Statement: Point out any missing or ambiguous information in the report that may affect the accuracy of the prediction. If none, output "None."

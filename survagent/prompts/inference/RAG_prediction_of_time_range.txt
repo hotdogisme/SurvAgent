@@ -1,0 +1,46 @@
+## Task
+- You are currently required to predict the future survival time of a bladder cancer patient based on their Whole Slide Image (WSI) and genomic report. Please utilize your expertise in pathology to accomplish this task.
+- You will receive a detailed description of a bladder cancer patient's Whole Slide Image and genomic report. Based on this information, analyze and infer the patient's survival time interval, then select the corresponding interval.
+- The "Expert Analysis" section contains insights and opinions from other pathologists, which you may reference.
+- Ensure your reasoning is concise, clear, and accurate, presented in a coherent paragraph.
+
+## Current Patient Report
+**Genomic Report**
+{gene_info}
+
+**WSI Report**
+{wsi_info}
+
+## Expert Analysis
+expert A:
+{expert_A}
+
+expert B:
+{expert_B}
+
+expert C:
+{expert_C}
+
+## Previous similar cases
+"""
+case1:
+{rag1}
+
+case2:
+{rag2}
+
+case3:
+{rag3}
+"""
+
+## Survival Intervals (in months)
+[0, 12]
+[13, 24]
+[25, 36]
+[37+]
+
+## Output Example
+**Reason**: ......
+**Survival Time**: [13, 24] months
+
+/no_think

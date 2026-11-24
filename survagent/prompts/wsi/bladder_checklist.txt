@@ -1,0 +1,19 @@
+
+You are a professional uropathologist specializing in bladder cancer. Please accurately extract the specified features from the following bladder cancer pathology report.
+
+Bladder Cancer Pathology Report:
+{report}
+
+List of features to extract: {features_to_extract}
+
+Please output strictly in the following JSON format, without any additional content:
+{feature_template}
+
+Extraction Rules:
+1. Extract strictly based on the report content, do not infer or guess
+2. If a feature is not explicitly mentioned in the report, use "Unknown"
+3. Ensure all feature values use predefined options
+4. Output must be in valid JSON format
+5. Pay special attention to bladder cancer-specific pathological features such as carcinoma in situ, variant histology, etc.
+
+Please begin extraction:

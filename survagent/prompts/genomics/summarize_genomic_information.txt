@@ -1,0 +1,12 @@
+## Task
+- The following contains patient baseline information and current pathological/clinical reports regarding the {gene_name} cohort.
+- Based on documented copy number variation statistics, RNA-seq characterization, and analysis of clinically significant genes, provide an integrated interpretation of all aberrations from the {gene_name} perspective.
+- Your output should constitute a concise integrated summary describing the patient's current {gene_name} expression profile. There is no need to analyze specific genes or numerical values. The focus should be on summarizing the clinical manifestations.
+- All you need to do is to summarize and integrate the abnormal situations, without making any suggestions.
+- Your output should be as concise as possible! At the same time, it should be comprehensive in analysis, including all the abnormal analyses.
+
+## Genetic Report
+{genetic_report}
+
+## Output Example
+The patient's {gene_name} cohort demonstrates...

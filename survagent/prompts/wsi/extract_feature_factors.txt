@@ -1,0 +1,61 @@
+### Task Objective
+- You are given multiple **region-level descriptions** from the same Whole Slide Image (WSI) of a bladder cancer patient.
+- Given multiple **region-level descriptions** from the same Whole Slide Image (WSI), extract and aggregate **histopathological feature factors** into a single structured JSON output that represents the **overall WSI-level characteristics**, according to the provided **Feature Factor Table**.
+- These structured features will later be used to predict the patient’s **overall survival time**, classified into:
+    * A: 0–1 year
+    * B: 1–2 years
+    * C: 2–3 years
+    * D: more than 3 years
+- Please only output the final extracted JSON data, without including any other content.
+
+
+### Input
+Multiple slice descriptions from the same WSI, for example:
+```
+{slide_description}
+```
+
+### Feature Factor Table
+| Feature Factor | Type | Description | Possible Values | Extraction Rules (from text description) |
+|---------|------|------|--------|------------------------|
+| **Cellular_density** | Ordinal | Density of cell aggregation, high density may be associated with invasiveness. | Low (0), Medium (1), High (2) | Based on keywords like "dense aggregation" (high), "less cellular" (low), etc. |
+| **Nuclear_cytoplasmic_ratio** | Binary | High nuclear-to-cytoplasmic ratio is a marker of malignant cells. | 0 (Low), 1 (High) | Directly extract "high nucleus-to-cytoplasm ratio" as 1. |
+| **Nuclear_pleomorphism** | Ordinal | Degree of nuclear pleomorphism, reflecting cellular atypia. | None (0), Mild (1), Moderate (2), Severe (3) | Based on "pleomorphic" keywords and degree descriptions (e.g., "enlarged nuclei"). |
+| **Hyperchromatic_nuclei** | Binary | Hyperchromatic nuclei, suggesting malignancy. | 0 (No), 1 (Yes) | Directly extract "hyperchromatic" as 1. |
+| **Prominent_nucleoli** | Binary | Prominent nucleoli, associated with high-grade tumors. | 0 (No), 1 (Yes) | Directly extract "prominent nucleoli" as 1. |
+| **Glandular_formation** | Binary | Presence of glandular structures, characteristic of adenocarcinoma. | 0 (No), 1 (Yes) | Directly extract "glandular pattern" or "glandular structures" as 1. |
+| **Irregular_glands** | Binary | Irregular gland shapes, suggesting architectural atypia. | 0 (No), 1 (Yes) | Based on "irregularly shaped glands" or similar descriptions. |
+| **Cribriform_pattern** | Binary | Presence of cribriform pattern, associated with high-grade tumors. | 0 (No), 1 (Yes) | Directly extract "cribriform patterns" as 1. |
+| **Desmoplastic_stroma** | Binary | Desmoplastic stroma, associated with poor prognosis. | 0 (No), 1 (Yes) | Directly extract "desmoplastic stroma" or "fibrous stroma" as 1. |
+| **Inflammatory_infiltrate** | Binary | Inflammatory cell infiltration, may affect immune response. | 0 (No), 1 (Yes) | Based on "lymphoid aggregate" or "inflammatory cells". |
+| **Lymphoid_aggregates** | Binary | Lymphoid aggregates, specific type of inflammatory infiltration. | 0 (No), 1 (Yes) | Directly extract "lymphoid aggregate" as 1. |
+| **Necrosis** | Binary | Presence of necrosis, associated with aggressiveness. | 0 (No), 1 (Yes) | Not directly mentioned in text, but extract if "necrosis" is present. |
+| **Mitotic_count** | Continuous/Ordinal | Mitotic figure count, reflecting proliferative activity. | Low (0), Medium (1), High (2) | Not directly mentioned in text, but extract if "mitotic figures" are present. |
+| **Note** | Str | Other descriptions that may affect the duration of survival | descriptions | Other descriptions that may affect the duration of survival |
+
+### Feature Extraction Rules
+* Follow the **Feature Factor Table** exactly.
+* If the text description is vague (e.g., “moderate density,” “partial necrosis”), infer the most appropriate level.
+* If a feature is not mentioned, assign `0` or `None`.
+* Preserve any key pathological terms that may influence prognosis in the `Note` field.
+* The integrated "Note" section should not contain any repeated descriptions.
+
+### Output Example
+```json
+{
+  "Cellular_density": 2,
+  "Nuclear_cytoplasmic_ratio": 1,
+  "Nuclear_pleomorphism": 3,
+  "Hyperchromatic_nuclei": 1,
+  "Prominent_nucleoli": 1,
+  "Glandular_formation": 0,
+  "Irregular_glands": 1,
+  "Cribriform_pattern": 0,
+  "Desmoplastic_stroma": 1,
+  "Inflammatory_infiltrate": 1,
+  "Lymphoid_aggregates": 0,
+  "Necrosis": 1,
+  "Mitotic_count": 2,
+  "Note": "Overall features indicate high cellularity, marked nuclear atypia, necrosis, and inflammatory infiltration, suggesting high malignancy."
+}
+```

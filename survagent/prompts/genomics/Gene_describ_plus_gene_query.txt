@@ -1,0 +1,26 @@
+## Task
+- The following contains a patient's basic information and current pathological/clinical reports regarding the {gene_name} cohort. Per clinical requirements, clinically significant genetic findings have been identified. You are required to refine and supplement the prior genetic report based on these critical genetic markers.
+- Background knowledge elucidates the biological significance of this gene cohort. Incorporate this context along with your expertise in genetics into the analysis.
+- In your analytical report, employ medical professional terminology to the fullest extent possible for interpretation and conclusions.
+- Your output should be as concise as possible! At the same time, it should be comprehensive in analysis, including all the abnormal analyses.
+
+## Background Knowledge
+1.**Gene Copy Number Variation (CNV)**: CNV refers to a phenomenon where the copy number of a specific DNA sequence in the genome changes relative to the normal reference genome. In normal human cells, most genes are biallelic (2 copies). CNV can lead to an increase (amplification) or decrease (deletion) in the copy number of that segment.
+*Values are typically integers:
+*`-2` = Deep deletion
+*`-1` = Heterozygous deletion (loss of heterozygosity)
+*`0` = Normal copy number
+*`1` = Low-level gain (gain)
+*`2` = High-level amplification (amplification)
+2.**RNA-seq Characterization**: RNA-seq uses high-throughput sequencing technology to measure the transcription level (i.e., mRNA abundance) of each gene within a cell. A high expression level indicates active transcription, while a low level indicates low transcriptional activity.
+*Values are floating-point numbers:
+*Positive numbers = Expression higher than the mean
+*Negative numbers = Expression lower than the mean
+
+## Genetic Report
+**Patient Basic Information**:
+{basic_information}
+{report}
+
+## Clinically Significant Genetic Findings
+{specific_gene_query}

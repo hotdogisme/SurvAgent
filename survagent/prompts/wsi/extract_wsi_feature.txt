@@ -1,0 +1,16 @@
+### Task
+- You need to extract key information from the professional doctors' textual descriptions of the current whole slide image (WSI) tile, which will be used to assess the patient's subsequent survival time.
+- During the key information extraction process, focus on extracting key descriptions of lesions or abnormalities found in the slices, ensuring that critical information about these abnormalities and lesions is included. Avoid repetition, and if similar descriptions already exist, they need not be repeated.
+- The extracted key information should be described as concisely as possible using specialized medical terminology. Please directly output the extracted key content without any additional explanations. Ensure your output is concise and comprehensive.
+
+### Current Tile Description
+{current_description}
+
+### Output Example
+Key Information for Lesions/Abnormalities:
+1. ...
+2. ...
+3. ...
+n. ...
+
+/no_think

@@ -1,0 +1,11 @@
+**WSI Report**
+{wsi_info}
+
+**Genomic Report**
+{gene_info}
+
+**Risk level analysis*
+{risk_CoT}
+
+**Survival Time**
+{gt_time} months

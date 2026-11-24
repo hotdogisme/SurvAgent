@@ -1,0 +1,39 @@
+## Task
+- Your current task is to predict the future survival time of a bladder cancer patient utilizing the genomic report. You are required to apply your expertise in pathology to accomplish this task.
+- You will receive a detailed description of the patient’s genomic test results, along with three historical cases retrieved from the case database that most closely align with the current patient’s profile. Based on the current patient’s report and these historically relevant cases, conduct a thorough analysis to predict the patient’s future survival time.
+- Meanwhile, for the current case, authoritative pathologists have provided the survival time range for this case. Please use the given information to make the most accurate prediction (to the extent of specific numbers) for the survival time of the current case.
+- Your output must consist of an analysis followed by the predicted survival time. Ensure your analysis is concise, clear, and accurate, presented as a coherent paragraph.
+- In order to more accurately distinguish the survival time of patients, please retain the predicted survival time to two decimal places.
+
+## Current Patient Report
+**Genomic Report**
+{gene_info}
+
+**WSI Report**
+{wsi_info}
+
+## The most likely range of survival time
+**{time_range} months**
+
+## Historically Relevant Cases
+**Risk Level Description**
+    High: Prognostic survival time of 0-12 months
+    High-intermediate: Prognostic survival time of 12-24 months
+    Low-intermediate: Prognostic survival time of 24-36 months
+    Low: Prognostic survival time of over 36 months
+"""
+case1:
+{rag1}
+
+case2:
+{rag2}
+
+case3:
+{rag3}
+"""
+
+## Output Example
+**Reason**: ......
+**Survival Time**: ......
+
+/no_think

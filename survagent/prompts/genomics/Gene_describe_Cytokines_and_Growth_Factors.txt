@@ -1,0 +1,40 @@
+## Task
+- Below is a description of a patient's basic information, along with statistical sequencing data for the Cytokines and Growth Factors Gene group. Please describe the status of this gene group at the genomic level and indicate whether any abnormalities are present.
+- The background knowledge describes the significance of this gene group. You can incorporate this background and your own knowledge of genetics into your analysis.
+- In your analysis report, employ medical professional terminology as much as possible for analysis and responses.
+- Your output should be as concise as possible! At the same time, it should be comprehensive in analysis, including all the abnormal analyses.
+
+## Background Knowledge
+- **Significance of the Cytokines and Growth Factors Gene Group**: Cytokines and growth factors play an indispensable role in intercellular signaling and in processes such as cell growth, proliferation, differentiation, and survival. The products encoded by genes for cytokines and growth factors act as signaling molecules for cellular communication. They bind to receptors on target cell surfaces, activating intracellular signaling pathways that regulate diverse physiological activities.Within the tumor microenvironment, dysregulated expression or secretion of these cytokines and growth factors may promote tumor cell growth, angiogenesis, and immune evasion.
+- This gene group contains thousands of specific quantified gene sequences. To facilitate your analysis, I will provide their statistical information.
+- Genes in this group can be broadly divided into two parts:
+1.**Gene Copy Number Variation (CNV)**: CNV refers to a phenomenon where the copy number of a specific DNA sequence in the genome changes relative to the normal reference genome. In normal human cells, most genes are biallelic (2 copies). CNV can lead to an increase (amplification) or decrease (deletion) in the copy number of that segment.
+*Values are typically integers:
+*`-2` = Deep deletion
+*`-1` = Heterozygous deletion (loss of heterozygosity)
+*`0` = Normal copy number
+*`1` = Low-level gain (gain)
+*`2` = High-level amplification (amplification)
+2.**RNA-seq Characterization**: RNA-seq uses high-throughput sequencing technology to measure the transcription level (i.e., mRNA abundance) of each gene within a cell. A high expression level indicates active transcription, while a low level indicates low transcriptional activity.
+*Values are floating-point numbers:
+*Positive numbers = Expression higher than the mean
+*Negative numbers = Expression lower than the mean
+
+## Patient Basic Information
+{basic_information}
+
+## Genes Group Statistics
+{Mutation_situation}
+--------------------------------------
+{Expression_level_situation}
+
+## Output Example
+**Abnormal conditions and clinical effects**:
+1. ...
+2. ...
+...
+n. ....
+**The specific names of the genes that require detailed analysis**:
+- VEGFA
+- ...
+- others genes ... (etc.)

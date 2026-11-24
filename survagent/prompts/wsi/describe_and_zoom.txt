@@ -1,0 +1,1 @@
+This is a histopathological image. Please provide a detailed description of this image. **If you are not convinced or unsure about the analysis of the current area, then at the end of the output, indicate whether a magnification is necessary.**
